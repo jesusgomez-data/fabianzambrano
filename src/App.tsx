@@ -80,10 +80,10 @@ const Hero = () => {
           }}>
             Fisioterapia Avanzada & Pilates
           </span>
-          <h1 className="hero-text-shadow" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', marginBottom: '2rem', color: 'var(--secondary)' }}>
+          <h1 className="hero-title hero-text-shadow">
             Recupera tu <span className="gradient-text">Bienestar</span> con Movimiento
           </h1>
-          <p className="hero-text-shadow" style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '3rem', maxWidth: '600px', fontWeight: 500 }}>
+          <p className="hero-subtitle hero-text-shadow">
             Tratamientos personalizados de terapia manual y pilates clínico para que vuelvas a moverte sin dolor. 
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -119,7 +119,7 @@ const Services = () => {
     <section id="servicios" className="section bg-sub">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Especialidades Médicas</h2>
+          <h2 className="section-title">Especialidades Fisioterapéuticas</h2>
           <p style={{ color: 'var(--text-light)', maxWidth: '600px', margin: '0 auto' }}>
             Ofrecemos un enfoque integral para tu salud física, combinando años de experiencia académica y práctica clínica.
           </p>
@@ -148,16 +148,7 @@ const About = () => {
       <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'center' }}>
         <div style={{ position: 'relative' }}>
           <img src="/assets/images/foto1.jpeg" alt="Fabian" style={{ width: '100%', borderRadius: '32px', boxShadow: '0 30px 60px rgba(0,0,0,0.1)' }} />
-          <div style={{ 
-            position: 'absolute', 
-            bottom: '-30px', 
-            right: '-30px', 
-            background: 'var(--secondary)', 
-            color: 'white', 
-            padding: '2rem', 
-            borderRadius: '24px',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
-          }}>
+          <div className="experience-badge">
             <div style={{ fontSize: '2.5rem', fontWeight: 800 }}>7+</div>
             <div style={{ fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7 }}>Años de Experiencia</div>
           </div>
