@@ -12,14 +12,14 @@ import {
 import { motion } from 'framer-motion';
 
 const Logo = () => (
-  <svg width="280" height="60" viewBox="0 0 280 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="main-logo-svg">
-    <circle cx="30" cy="30" r="22" stroke="#06b6d4" stroke-width="2.5" />
-    <path d="M30 20V40M20 30H40" stroke="#06b6d4" stroke-width="4" stroke-linecap="round" />
-    <path d="M30 12C30 12 48 15 48 30C48 45 30 48 30 48" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" opacity="0.3" />
-    <text x="60" y="32" fill="currentColor" font-family="'Outfit', sans-serif" font-weight="700" font-size="20" className="logo-text-primary">
+  <svg viewBox="0 0 280 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="main-logo-svg">
+    <circle cx="30" cy="30" r="22" stroke="#06b6d4" strokeWidth="2.5" />
+    <path d="M30 20V40M20 30H40" stroke="#06b6d4" strokeWidth="4" strokeLinecap="round" />
+    <path d="M30 12C30 12 48 15 48 30C48 45 30 48 30 48" stroke="#06b6d4" strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
+    <text x="60" y="32" fill="currentColor" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="20" className="logo-text-primary">
       FABIAN <tspan fill="#06b6d4">ZAMBRANO</tspan>
     </text>
-    <text x="60" y="48" fill="#64748b" font-family="'Outfit', sans-serif" font-weight="500" font-size="9" letter-spacing="0.2em" className="logo-text-secondary">
+    <text x="60" y="48" fill="#64748b" fontFamily="'Outfit', sans-serif" fontWeight="500" fontSize="9" letterSpacing="0.2em" className="logo-text-secondary">
       BIENESTAR & MOVIMIENTO
     </text>
   </svg>
