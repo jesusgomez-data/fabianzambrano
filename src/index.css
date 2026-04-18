@@ -232,12 +232,21 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .section { padding: 60px 0; }
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section { 
+    padding: 60px 0; 
+  }
+
+  .nav-links { 
+    display: none; 
+  }
   
   .main-logo-svg {
     height: 35px !important;
-    width: auto;
+    width: auto !important;
   }
   
   .logo-text-secondary {
@@ -245,11 +254,71 @@ footer {
   }
   
   .btn-primary {
-    padding: 0.5rem 0.8rem !important;
-    font-size: 0.75rem !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
   }
   
   .nav-fixed {
     padding: 0.5rem 0 !important;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    height: auto;
+    min-height: 80vh;
+    padding: 100px 0 60px;
+    text-align: center;
+  }
+
+  .hero-video-bg video {
+    opacity: 0.6;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+    margin: 0 auto 2.5rem !important;
+  }
+
+  .hero div[style*="display: flex"] {
+    justify-content: center;
+    gap: 1rem !important;
+  }
+
+  /* About section mobile */
+  #sobre-mi .container {
+    gap: 3rem !important;
+    text-align: center;
+  }
+
+  #sobre-mi div[style*="display: flex"] {
+    justify-content: center;
+  }
+
+  #sobre-mi img {
+    border-radius: 20px !important;
+  }
+
+  /* Booking adjustments */
+  #reserva .container > div {
+    display: block !important;
+  }
+
+  #reserva div[style*="padding: 4rem"] {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  /* Mobile mockup scaling */
+  .mobile-mockup {
+    width: 240px;
+    height: 480px;
+  }
+  
+  footer {
+    padding: 40px 0;
   }
 }
