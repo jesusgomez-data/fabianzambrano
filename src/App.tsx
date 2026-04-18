@@ -124,7 +124,7 @@ const Services = () => {
             Ofrecemos un enfoque integral para tu salud física, combinando años de experiencia académica y práctica clínica.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+        <div className="services-grid">
           {items.map((item, i) => (
             <motion.div 
               whileHover={{ y: -10 }}
@@ -200,7 +200,7 @@ const VideoGallery = () => {
           <h2 style={{ fontSize: '2.5rem' }}>Galería de Movimiento</h2>
           <p style={{ color: 'var(--text-light)', marginTop: '1rem' }}>Observa nuestras técnicas y ejercicios en acción real.</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '3rem', justifyContent: 'center' }}>
+        <div className="videos-grid">
           {videos.map((v, i) => (
             <div key={i} className="mobile-mockup" style={{ margin: '0 auto' }}>
                <div className="mobile-screen">
@@ -234,16 +234,8 @@ const Booking = () => {
   return (
     <section id="reserva" className="section">
       <div className="container">
-        <div style={{ 
-          background: 'white', 
-          borderRadius: '40px', 
-          border: '1px solid var(--border)', 
-          overflow: 'hidden', 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          boxShadow: '0 40px 100px rgba(0,0,0,0.05)'
-        }}>
-          <div style={{ padding: '4rem', background: 'var(--secondary)', color: 'white' }}>
+        <div className="booking-card">
+          <div className="booking-content" style={{ background: 'var(--secondary)', color: 'white' }}>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'white' }}>Reserva tu Sesión</h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '4rem', fontSize: '1.1rem' }}>
               Selecciona tu servicio y consulta los horarios disponibles directamente vía WhatsApp.
@@ -259,7 +251,7 @@ const Booking = () => {
               </div>
             </div>
           </div>
-          <div style={{ padding: '4rem' }}>
+          <div className="booking-content">
             <div style={{ display: 'grid', gap: '2rem' }}>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '0.8rem', fontSize: '0.9rem' }}>Nombre Completo</label>
