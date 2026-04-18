@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <nav className={`nav-fixed ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="container nav-content">
-        <a href="#inicio" className="logo-container" style={{ color: scrolled ? '#0f172a' : 'white' }}>
+        <a href="#inicio" className="logo-container">
           <Logo />
         </a>
         <div className="nav-links">
@@ -47,7 +47,7 @@ const Navbar = () => {
           <a href="#videos">Videos</a>
           <a href="#reserva">Contacto</a>
         </div>
-        <a href="#reserva" className="btn-primary">Reservar Cita</a>
+        <a href="#reserva" className="nav-cta-btn">Reservar</a>
       </div>
     </nav>
   );
@@ -69,16 +69,8 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           style={{ maxWidth: '800px' }}
         >
-          <span className="hero-text-shadow" style={{ 
-            color: 'var(--primary)', 
-            fontWeight: 800, 
-            letterSpacing: '0.2em', 
-            textTransform: 'uppercase', 
-            fontSize: '0.85rem',
-            display: 'block',
-            marginBottom: '1.5rem'
-          }}>
-            Fisioterapia Avanzada & Pilates
+          <span className="hero-category hero-text-shadow">
+            Fisioterapeuta Colegiado
           </span>
           <h1 className="hero-title hero-text-shadow">
             Recupera tu <span className="gradient-text">Bienestar</span> con Movimiento
@@ -121,7 +113,7 @@ const Services = () => {
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <h2 className="section-title">Especialidades Fisioterapéuticas</h2>
           <p style={{ color: 'var(--text-light)', maxWidth: '600px', margin: '0 auto' }}>
-            Ofrecemos un enfoque integral para tu salud física, combinando años de experiencia académica y práctica clínica.
+            Ofrezco un enfoque integral para tu salud física, combinando años de experiencia académica y práctica clínica.
           </p>
         </div>
         <div className="services-grid">
@@ -189,7 +181,7 @@ const VideoGallery = () => {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <h2 style={{ fontSize: '2.5rem' }}>Galería de Movimiento</h2>
-          <p style={{ color: 'var(--text-light)', marginTop: '1rem' }}>Observa nuestras técnicas y ejercicios en acción real.</p>
+          <p style={{ color: 'var(--text-light)', marginTop: '1rem' }}>Observa mis técnicas y ejercicios en acción real.</p>
         </div>
         <div className="videos-grid">
           {videos.map((v, i) => (

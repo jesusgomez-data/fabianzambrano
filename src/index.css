@@ -32,6 +32,7 @@ h1, h2, h3 {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  word-break: break-word;
 }
 
 .gradient-text {
@@ -62,24 +63,44 @@ h1, h2, h3 {
   transition: all 0.4s ease;
   padding: 1rem 0;
 }
+.nav-cta-btn {
+  background: var(--primary);
+  color: white !important;
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.2);
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(6, 182, 212, 0.3);
+}
+
 .logo-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   height: 50px;
+  color: #0f172a;
+  text-decoration: none;
 }
 
-.logo-img {
-  height: 100%;
-  width: auto;
+.nav-scrolled .logo-container {
+  color: #0f172a;
 }
 
-.nav-scrolled {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+.hero .logo-container {
+  color: white; /* Only if it's over the hero video */
+}
+
+/* Explicitly for the initial state if needed */
+.nav-fixed:not(.nav-scrolled) .logo-container {
+  color: white;
 }
 
 .nav-content {
@@ -162,6 +183,23 @@ h1, h2, h3 {
 
 .hero-text-shadow {
   text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-category {
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-category {
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+  }
 }
 
 .hero-title {
@@ -315,46 +353,60 @@ footer {
 
 @media (max-width: 768px) {
   html, body {
-    width: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    position: relative;
+  }
+
+  #root {
+    width: 100vw;
+    overflow-x: hidden !important;
   }
 
   .container {
     padding: 0 1rem;
     width: 100%;
-    overflow-x: hidden;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
   
   .section { 
     padding: 40px 0; 
+    overflow-x: hidden;
   }
 
   /* Navbar adjustments */
   .nav-fixed {
-    padding: 0.25rem 0 !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .nav-content {
+    justify-content: space-between !important;
+    gap: 0.5rem;
   }
 
   .main-logo-svg {
-    height: 28px !important;
+    height: 24px !important;
     width: auto !important;
+    max-width: 180px;
+  }
+
+  .nav-cta-btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
   }
 
   .nav-links { 
     display: none; 
   }
   
-  .btn-primary {
-    padding: 0.4rem 0.8rem !important;
-    font-size: 0.75rem !important;
-  }
-
   /* Hero adjustments */
   .hero {
     height: auto;
     min-height: 100vh;
-    padding: 120px 0 60px;
+    padding: 100px 0 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -362,22 +414,22 @@ footer {
   }
 
   .hero span[style*="letter-spacing"] {
-    letter-spacing: 0.1em !important;
-    font-size: 0.75rem !important;
-    display: inline-block;
+    letter-spacing: 0.05em !important;
+    font-size: 0.7rem !important;
+    display: block;
     width: 100%;
     margin-bottom: 1rem !important;
   }
 
   .hero-title {
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
     line-height: 1.2;
     margin-bottom: 1.5rem !important;
     width: 100%;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     margin: 0 auto 2.5rem !important;
     width: 100%;
     padding: 0 0.5rem;
@@ -388,80 +440,85 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 1rem !important;
+    width: 100%;
   }
 
   .hero .btn-primary {
     width: 100%;
-    max-width: 250px;
+    max-width: 100%;
     padding: 1rem !important;
     font-size: 0.95rem !important;
   }
 
   /* Titles */
   .section-title {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     padding: 0 0.5rem;
   }
 
   /* Cards Mobile */
   .card {
-    padding: 1.5rem;
-    border-radius: 20px;
+    padding: 1.25rem;
+    border-radius: 16px;
     width: 100%;
   }
 
   .services-grid, .videos-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
     width: 100%;
   }
 
   /* About section mobile */
   #sobre-mi .container {
-    padding-top: 2rem;
-    gap: 2.5rem !important;
+    padding-top: 1rem;
+    gap: 2rem !important;
     text-align: center;
     grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column;
   }
 
   #sobre-mi img {
-    border-radius: 20px !important;
-    max-width: 100%;
+    border-radius: 16px !important;
+    width: 100%;
+    height: auto;
   }
 
   .experience-badge {
     position: relative !important;
     right: 0 !important;
     bottom: 0 !important;
-    margin: -30px auto 0;
+    margin: -40px auto 0;
     width: fit-content;
-    padding: 1rem 1.5rem !important;
-    border-radius: 16px !important;
+    padding: 0.8rem 1.2rem !important;
+    border-radius: 12px !important;
     z-index: 10;
   }
 
   /* Booking adjustments */
   .booking-card {
     display: block;
-    border-radius: 20px !important;
+    border-radius: 16px !important;
+    width: 100%;
   }
 
   .booking-content {
-    padding: 2.5rem 1.25rem;
+    padding: 2rem 1rem;
   }
 
   .booking-content h2 {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
   }
 
   /* Mobile mockup scaling */
   .mobile-mockup {
-    max-width: 240px;
-    height: 480px;
+    max-width: 220px;
+    height: 440px;
     margin: 0 auto;
   }
   
   footer {
-    padding: 40px 0;
+    padding: 30px 0;
   }
 }
